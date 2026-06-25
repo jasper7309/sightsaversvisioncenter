@@ -227,31 +227,50 @@
     inset: 0;
     background: linear-gradient(135deg, #0A1E3D 0%, #0A4D8C 45%, #1565C0 100%);
   }
-  .hero-img {
+.hero-img {
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
-    width: 55%;
+
+    width: 48%;               /* narrower image */
     object-fit: cover;
     object-position: center top;
-  }
-  .hero-overlay {
+}
+
+  
+ .hero-overlay {
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
     bottom: 0;
-    width: 58%;
-    background: linear-gradient(to right, #0A1E3D 0%, #0A4D8C 30%, transparent 70%);
-  }
-  .hero-content {
+
+    width: 48%;               /* EXACTLY match image width */
+
+    background: linear-gradient(
+        90deg,
+        rgba(10,30,61,0.95) 0%,
+        rgba(10,77,140,0.55) 25%,
+        rgba(10,77,140,0.15) 50%,
+        transparent 80%
+    );
+
+    pointer-events: none;
+}
+.hero-content {
     position: relative;
     z-index: 2;
-    max-width: 620px;
+
+    max-width: 520px;         /* tighter text block */
     padding: 0 24px;
-    margin-left: max(24px, calc((100vw - 1280px) / 2 + 24px));
-    animation: fadeInUp 0.9s ease both;
-  }
+
+    margin-left: max(
+        24px,
+        calc((100vw - 1280px) / 2 + 10px)
+    );
+
+    animation: fadeInUp .9s ease both;
+}
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
